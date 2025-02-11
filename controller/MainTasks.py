@@ -13,8 +13,10 @@ class AllTask:
         print("3️⃣ Exit")
         self.STask = SubDepdenyTask.SubTask()
 
-    def cleanup_menu(self):
-        directory = input("📁 Enter the directory path: ").strip()
+    def cleanup_menu(self, directory):
+        # directory = input("📁 Enter the directory path: ").strip()
+        # directory
+        print("------------",directory)
         if not os.path.isdir(directory):
             print("❌ Invalid directory!")
             return

@@ -35,4 +35,4 @@ class SubTask:
             print("⚠️ No files were deleted.")
 
         # Print the log for reference
-        print("Deleted Files Log:", file_delete_log)
+        # print("Deleted Files Log:", file_delete_log)
