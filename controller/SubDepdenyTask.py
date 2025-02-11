@@ -1,4 +1,5 @@
 import os
+from controller import dbmanage
 
 class SubTask:
     def __init__(self):
@@ -26,5 +27,12 @@ class SubTask:
                 except Exception as e:
                     print(f"❌ Error deleting {filepath}: {e}")
 
-        # Print or use the log
+        # Save the log to MongoDB
+        if file_delete_log:
+            dbmanage.collection.insert_many(file_delete_log)
+            print("✅ Logs saved to MongoDB.")
+        else:
+            print("⚠️ No files were deleted.")
+
+        # Print the log for reference
         print("Deleted Files Log:", file_delete_log)
